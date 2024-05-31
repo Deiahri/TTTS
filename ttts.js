@@ -14,7 +14,7 @@ function convertToSpeech(text, index=0) {
     } else if (char == '.' || char == '!' || char == '?') {
         additionalDelay = 500;
     } else {
-        playSound(char);
+        playSound(char.toLowerCase());
     }
     setTimeout(convertToSpeech.bind(null, text, index+1), delay+additionalDelay);
 }
