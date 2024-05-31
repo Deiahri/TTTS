@@ -1,7 +1,7 @@
 
 
 let delay = 150;
-function convertToSpeech(text, index=0) {
+function convertToSpeech(text, voice, index=0) {
     let additionalDelay = 0;
     if(index >= text.length) {
         return;
@@ -14,9 +14,9 @@ function convertToSpeech(text, index=0) {
     } else if (char == '.' || char == '!' || char == '?') {
         additionalDelay = 500;
     } else {
-        playSound(char.toLowerCase());
+        playSound(char.toLowerCase(), voice);
     }
-    setTimeout(convertToSpeech.bind(null, text, index+1), delay+additionalDelay);
+    setTimeout(convertToSpeech.bind(null, text, voice, index+1), delay+additionalDelay);
 }
 
 

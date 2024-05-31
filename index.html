@@ -13,13 +13,15 @@
         <p style="font-size: 1rem;">The world's worst text to speech engine</p>
         <input placeholder="type here" id="textArea" style="text-align: center; font-size: 1rem; padding: 20px; padding-left: 30px; padding-right: 30px; background-color: rgb(199, 199, 199); min-width: 20rem; border-radius: 25px; max-width: 90vw; margin-bottom: 20px; border: 1px solid rgba(0, 0, 0, 0.293);"></input>
         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-            <a id="generateButton" class="btn btn-success" style="margin: 0px; font-size: 1.25rem;" onclick="convertToSpeech(document.getElementById('textArea').value)">Generate</a>
+            <a id="generateButton" class="btn btn-success" style="margin: 0px; font-size: 1.25rem;" onclick="convertToSpeech(document.getElementById('textArea').value, document.getElementById('voice').value)">Generate</a>
             <select id="voice" style="height: 100%; margin-left: 10px; padding-left: 10px; padding-right: 10px; font-size: 1.25rem; position: relative;">
-                <option value="volvo" style="font-size: 1rem; display: block;">Voice: Deiahri</option>
+                <option value="deiahri" style="font-size: 1rem; display: block;">Voice: Deiahri</option>
+                <option value="InTheBoxMonoLiteral" style="font-size: 1rem; display: block;">Voice: InTheBox (Monotone)</option>
             </select>
         </div>
+        <!-- <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="margin-top: 20px;"> -->
     </div>
-    <p style="position: fixed; bottom: 0%; right: 3%;">© Deiahri 2024</p>
+    <p style="position: fixed; bottom: 0%; right: 3%; ">© Deiahri 2024</p>
     <script src="sound.js"></script>
     <script src="ttts.js"></script>
 </body>

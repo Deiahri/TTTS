@@ -2,12 +2,19 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 
 let sounds = {};
 
-for(let char of alphabet) {
-    sounds[char] = new Audio(`./audio/deiahri/${char}.ogg`);
-    sounds[char].load();
-}
+let voice_options = document.getElementById('voice').children;
 
-function playSound(soundName) {
-    sounds[soundName].load();
-    sounds[soundName].play();
+
+for(let voice of voice_options) {
+    sounds[voice.value] = {};
+    for(let char of alphabet) {
+        sounds[voice.value][char] = new Audio(`./audio/${voice.value}/${char}.ogg`);
+        sounds[voice.value][char].load();
+    }
+}
+    
+
+function playSound(soundName, voice) {
+    sounds[voice][soundName].load();
+    sounds[voice][soundName].play();
 }
